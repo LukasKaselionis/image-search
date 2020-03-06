@@ -1,14 +1,16 @@
 import React from 'react';
 import './ImageList.css';
 
-function ImageList(){
-    return (
-        <div className="images">
-            <div className="images-list">
+class ImageList extends React.Component{
+        render(){
+            return (
+                <div className="images">
+                <div className="images-list">
 
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default ImageList;
