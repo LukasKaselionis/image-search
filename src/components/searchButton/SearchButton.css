@@ -1,0 +1,10 @@
+.search {
+    padding: 25px;
+}
+
+.search-button {
+    height: 45px;
+    width: 195px;
+    background-color: #fefefe;
+    border-radius: 15px;
+}
