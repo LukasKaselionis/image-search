@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import SearchBar from '../searchBar/SearchBar';
 import ImageList from '../imageList/ImageList';
+import QueryList from '../queryList/QueryList';
 import './App.css';
 
 class App extends React.Component {
@@ -23,8 +24,9 @@ class App extends React.Component {
         <div className="App-header">
             <SearchBar userSubmit={this.onSearchSubmit}></SearchBar>
         </div>
-        <div className="App-content">
-            <ImageList foundImages={this.state.images}></ImageList>
+        <div className="wrapper">
+              <ImageList foundImages={this.state.images}></ImageList>
+              <QueryList></QueryList>
         </div>
       </div>
     );
