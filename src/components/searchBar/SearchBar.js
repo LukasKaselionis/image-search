@@ -25,7 +25,10 @@ class SearchBar extends React.Component {
                             value={this.state.val}
                             onChange={this.onInputChange}
                         />
-                        <button className="search_button" onClick={this.onFormSubmit}>Search</button>
+                        <div className="button">
+                            <button className="search_button" onClick={this.onFormSubmit}>Search</button>
+                            <button className="save_button">Save</button>
+                        </div>
                     </form>
             </div>
             )

@@ -6,6 +6,7 @@
     height: 750px;
     background-color: #ffffff;
     border: 1px solid #000000;
+    border-radius: 35px;
     display: flex;
     flex-direction: column;
 }

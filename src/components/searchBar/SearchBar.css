@@ -17,19 +17,28 @@
     font-size: 24px;
 }
 
-.search_button {
+.button {
+    display: flex;
+    
+}
+
+.button > .search_button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.search_button, .save_button {
     height: 45px;
-    width: 195px;
+    width: 100px;
     background-color: #fefefe;
     border-radius: 15px;
 }
 
 @media only screen and (max-width: 768px) {
-    .search_form {
+    .search_form, .button {
         flex-direction: column;
     }
 
-    .search_button {
+    .search_button, .save_button {
         width: 100%;
         margin-top: 20px;
     }
