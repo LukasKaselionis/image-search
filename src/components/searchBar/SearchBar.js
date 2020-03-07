@@ -16,16 +16,16 @@ class SearchBar extends React.Component {
 
         render (){
             return (
-            <div className="input-search">
-                 <form onSubmit={this.onFormSubmit}>
-                        <label><h2>Image Search: </h2></label>
+            <div className="search-section">
+                <label><h2>Image Search: </h2></label>
+                 <form onSubmit={this.onFormSubmit} className="search_form">
                         <input
-                            className="input"
+                            className="search_input"
                             type="search"
                             value={this.state.val}
                             onChange={this.onInputChange}
                         />
-                        <button className="search-button" onClick={this.onFormSubmit}>Search</button>
+                        <button className="search_button" onClick={this.onFormSubmit}>Search</button>
                     </form>
             </div>
             )
