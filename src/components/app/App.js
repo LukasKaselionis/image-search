@@ -3,24 +3,35 @@ import axios from 'axios';
 import SearchBar from '../searchBar/SearchBar';
 import ImageList from '../imageList/ImageList';
 import QueryList from '../queryList/QueryList';
+import ProgressBar from '../progressBar/ProgressBar';
 import './App.css';
 
 class App extends React.Component {
-  state = { images: []}
+  state = { images: [], isLoading: false}
 
   onSearchSubmit = async (term) => {
-    const response = await axios.get('https://api.unsplash.com/search/photos', {
+    this.setState({isLoading: true});
+    axios.get('https://api.unsplash.com/search/photos', {
       params: { query: term },
       headers: {
         Authorization: 'Client-ID PTeA9_qH8lOMT6q5Z82XhBXTSNZ-m00PVu5HlM44p1w'
+      },
+    }).then(res => {
+      console.log(this.state.isLoading)
+      setTimeout(() => {
+        this.setState({images: res.data.results, isLoading: false})
+      }, 2000)
+    }).catch(err => {
+      if(err.response) {
+        console.log(err.response)
       }
     })
-    this.setState({images: response.data.results})
   }
 
     render() {
       return (
         <div className="App">
+          {this.state.isLoading ? <ProgressBar></ProgressBar> : false}
         <div className="App-header">
             <SearchBar userSubmit={this.onSearchSubmit}></SearchBar>
         </div>
