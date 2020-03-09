@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ImageCard extends Component {
+class ImageCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = { spans: 0};

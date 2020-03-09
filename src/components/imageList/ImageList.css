@@ -1,12 +1,12 @@
 .images {
-    padding: 25px;;
-}
-
-.images__list {
     height: 750px;
+    margin: 25px;
     background-color: #ffffff;
     border: 1px solid #000000;
     overflow: scroll;
+}
+
+.images__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: 10px;
