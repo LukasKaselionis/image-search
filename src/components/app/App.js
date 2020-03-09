@@ -17,7 +17,6 @@ class App extends React.Component {
         Authorization: 'Client-ID PTeA9_qH8lOMT6q5Z82XhBXTSNZ-m00PVu5HlM44p1w'
       },
     }).then(res => {
-      console.log(this.state.isLoading)
       setTimeout(() => {
         this.setState({images: res.data.results, isLoading: false})
       }, 2000)
@@ -31,7 +30,7 @@ class App extends React.Component {
     render() {
       return (
         <div className="App">
-          {this.state.isLoading ? <ProgressBar></ProgressBar> : false}
+          {this.state.isLoading ? <ProgressBar></ProgressBar> : ''}
         <div className="App-header">
             <SearchBar userSubmit={this.onSearchSubmit}></SearchBar>
         </div>
