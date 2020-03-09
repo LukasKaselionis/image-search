@@ -7,7 +7,7 @@ import ProgressBar from '../progressBar/ProgressBar';
 import './App.css';
 
 class App extends React.Component {
-  state = { images: [], isLoading: false}
+  state = { images: [], isLoading: false, query: ''}
 
   onSearchSubmit = async (term) => {
     this.setState({isLoading: true});
@@ -18,7 +18,7 @@ class App extends React.Component {
       },
     }).then(res => {
       setTimeout(() => {
-        this.setState({images: res.data.results, isLoading: false})
+        this.setState({images: res.data.results, isLoading: false, query: res.config.params.query})
       }, 2000)
     }).catch(err => {
       if(err.response) {
@@ -35,7 +35,7 @@ class App extends React.Component {
             <SearchBar userSubmit={this.onSearchSubmit}></SearchBar>
         </div>
         <div className="wrapper">
-              <ImageList foundImages={this.state.images}></ImageList>
+              <ImageList foundImages={this.state.images} query={this.state.query}></ImageList>
               <QueryList></QueryList>
         </div>
       </div>

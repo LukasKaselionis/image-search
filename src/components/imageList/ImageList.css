@@ -16,3 +16,9 @@
 .images__list img{
     width: 100%;
 }
+
+.images .error_message {
+    color: #dd4455;
+    font-size: 24px;
+    font-weight: 500;
+}

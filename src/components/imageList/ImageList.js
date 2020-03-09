@@ -7,14 +7,16 @@ const ImageList = (props) => {
         return <ImageCard key={img.id} image={img}/>
     });
 
-    if(props.foundImages.length > 0){
+    if(props.foundImages.length > 0 && props.query !== ''){
         return <div className="images">
             <div className="images__list">
                 {imgs}
             </div>
         </div>
+    } else if(props.query === '') {
+         return <div className="images"></div>
     } else {
-         return <div className="images"><p>Couldn't find any images. Try searching for another image.</p></div>
+        return <div className="images"><p className="error_message">Couldn't find any images. Try searching for another image.</p></div>
     }
 }
 
