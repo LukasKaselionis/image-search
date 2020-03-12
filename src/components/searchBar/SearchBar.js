@@ -2,15 +2,15 @@ import React from 'react';
 import './SearchBar.css'
 
 class SearchBar extends React.Component {
-    state = { val: ''}
+    state = { query: ''}
 
     onInputChange = (event) => {
-        this.setState({val: event.target.value})
+        this.setState({query: event.target.value})
     }
 
     onFormSubmit= (event) => {
         event.preventDefault()
-        this.props.userSubmit(this.state.val)
+        this.props.userSubmit(this.state.query)
     }
 
         render (){
@@ -21,7 +21,8 @@ class SearchBar extends React.Component {
                         <input
                             className="search_input"
                             type="search"
-                            value={this.state.val}
+                            value={this.state.query}
+                            placeholder="Enter images title"
                             onChange={this.onInputChange}
                         />
                         <div className="button">
